@@ -1,7 +1,7 @@
 import type { GrpcOptions } from '@nestjs/microservices'
 import { PROTO_PATHS } from '@razom-pay/contracts'
 
-export const grpcPackages = ['users.v1', 'account.v1']
+export const grpcPackages = ['users.v1']
 export const grpcProtoPaths = [PROTO_PATHS.USERS]
 export const grpcLoader: NonNullable<GrpcOptions['options']['loader']> = {
 	keepCase: false,
