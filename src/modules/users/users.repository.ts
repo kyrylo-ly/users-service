@@ -19,4 +19,10 @@ export class UsersRepository {
 		const user = this.repository.create(data)
 		return this.repository.save(user)
 	}
+
+	async update(id: string, data: Partial<UserEntity>) {
+		await this.repository.update({ id }, data)
+
+		return this.findById(id)
+	}
 }
