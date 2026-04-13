@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+    users-service:
+        container_name: users-service
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: always
+        env_file:
+            - .env.production.local
+        networks:
+            - razom-pay
+
+networks:
+    razom-pay:
+        external: true
