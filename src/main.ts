@@ -16,3 +16,5 @@ async function bootstrap() {
 	app.init()
 }
 bootstrap()
+
+// TODO: feat: prometheus metrics scrapping
