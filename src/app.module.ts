@@ -4,6 +4,7 @@ import { LoggerModule } from 'nestjs-pino'
 
 import { DatabaseModule } from './infra/db/db.module'
 import { UsersModule } from './modules/users/users.module'
+import { ObservabilityModule } from './observability/observability.module'
 
 @Module({
 	imports: [
@@ -24,6 +25,7 @@ import { UsersModule } from './modules/users/users.module'
 				})
 			}
 		}),
+		ObservabilityModule,
 		DatabaseModule,
 		UsersModule
 	]
