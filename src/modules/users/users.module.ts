@@ -6,6 +6,7 @@ import { PROTO_PATHS } from '@razom-pay/contracts'
 
 import { AccountClientGrpc } from '../../infra/grpc/clients/account.client'
 
+import { UserReviewEntity } from './entities/user-review.entity'
 import { UserEntity } from './entities/user.entity'
 import { UsersController } from './users.controller'
 import { UsersRepository } from './users.repository'
@@ -13,7 +14,7 @@ import { UsersService } from './users.service'
 
 @Module({
 	imports: [
-		TypeOrmModule.forFeature([UserEntity]),
+		TypeOrmModule.forFeature([UserEntity, UserReviewEntity]),
 		ClientsModule.registerAsync([
 			{
 				name: 'ACCOUNT_PACKAGE',
