@@ -15,7 +15,10 @@ import { ObservabilityModule } from './observability/observability.module'
 				transport: {
 					target: 'pino/file',
 					options: {
-						destination: '/var/log/services/users/users.log',
+						destination:
+							process.platform === 'linux'
+								? '/var/log/services/users/users.log'
+								: '.logs/users/users.log',
 						mkdir: true
 					}
 				},
